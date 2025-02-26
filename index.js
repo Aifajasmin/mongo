@@ -3,11 +3,11 @@ const app = express()
 const port = 3000
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-
-
+require('dotenv').config();
+const link=process.env.link
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://aipz3562:expC1TmtMnHCmeyV@flowers.w7tey.mongodb.net/?retryWrites=true&w=majority&appName=flowers')
+mongoose.connect(link)
 .then(()=>console.log("mongo db is connected"))
 .catch(()=>console.log("mongo bd is not connected"))
 
